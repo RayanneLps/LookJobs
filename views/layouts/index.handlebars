@@ -1,0 +1,47 @@
+    <div id="top-container" class="container-fluid">
+        <h1 id="main-title" class="text-center">A sua vaga dos sonhos está aqui</h1>
+        <p id="main-subtitle" class="text-center">Somos o site com mais vagas home office na área de tecnologia no mercado atual</p>
+        <form id="seach-form" class="form-inline" action="/" method="get">
+
+            <div class="form-group col-md-10">
+                <input type="text" class="form-control" id="job" name="job" placeholder="Digite a vaga que você está buscando">
+            </div>
+
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary">Procurar</button>
+            </div>
+
+        </form>
+    </div>
+
+    <main>
+
+        <div id="jobs-container" class="container">
+            <div class="row">
+                <div class="col-md-12">
+            
+                    {{#if pesquisa}}
+                        <h2 id="job-list-title">Buscando vagas que contém: {{pesquisa}}</h2>
+                    {{else}}
+                        <h2 id="job-list-title">Veja as nossas vagas em destaque</h2>
+                    {{/if}}
+
+                    <ul id="job-list" class="list-group">
+                        {{#each jobs}} <!--Loop(um for) entre os empregos cadastrados no banco -->
+                            <li class="list-group-item {{#if dataValues.nova_vaga }}new-job{{/if}}"> <!--se for 1 ele dá esse design de nova vaga -->
+                                <img src="/img/company.svg" alt="Company">
+                                <!--esse dataValues é uma metodo para buscar registro em um BD e retorna como objeto -->
+                                <p>{{dataValues.empresa}}</p> 
+                                <h2>{{dataValues.titulo}}</h2>
+                                <p>R${{dataValues.salario}}</p>
+                                <span class="new-job-label">Nova</span>
+                                <a class="btn btn-primary">Ver vaga</a>
+                            </li>
+                        {{/each}}    
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
