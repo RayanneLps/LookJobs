@@ -22,13 +22,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const hbs = create({
     extname: '.handlebars', // extensão dos arquivos handlebars
     defaultLayout: 'main',  // layout principal
-    layoutsDir: path.join(__dirname, 'views/layouts'), // pasta dos layouts
+    layoutsDir: path.join(__dirname, 'views/'), // pasta dos layouts
     partialsDir: path.join(__dirname, 'views/partials') // pasta dos partials
 });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'views/layouts')); // onde ficam os templates do projeto
+app.set('views', path.join(__dirname, 'views/')); // onde ficam os templates do projeto
 
 // Pasta de arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));

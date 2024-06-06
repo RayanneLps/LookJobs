@@ -12,13 +12,23 @@ router.get('/add', (req, res) => {
 })
 
 //mostrar detalhes da vaga
-router.get('/view/:id', (req,res) => Job.findOne({
-    where: {id: req.params.id}
-})).then(job => {
-    res.sender('view', {
-        job
+router.get('/views/:id', (req, res) => {
+    Job.findOne({
+        where: { id: req.params.id }
     })
-})
+    .then(job => {
+        if (!job) {
+            return res.status(404).json({ error: 'Vaga não encontrada' });
+        }
+        res.render('view', {
+            job
+        });
+    })
+    .catch(error => {
+        console.log(error);
+        res.status(500).json({ error: 'Falha ao buscar detalhes da vaga' });
+    });
+});
 
 //adicionar nova vaga via post
 router.post('/add', (req, res) => {
