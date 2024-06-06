@@ -6,7 +6,7 @@
 /* nav */
 .navbar{
     padding: 1rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #FFF;
 }
 
 .nav-item{
@@ -65,6 +65,20 @@
 .collapse.navbar-collapse a{
     color: inherit;
     text-decoration: none;
+}
+
+/* logo navbar 
+.navbar-brand .logo{
+    height: 60px;
+}*/
+.navbar-brand {
+    font-weight: bold;
+    font-size: 25px;
+    color: #f03e3e;
+}
+
+#title-principal:hover {
+    color:#f03e3e;
 }
 
 /* banner */
@@ -307,3 +321,79 @@
     border-color: #f03e3e;
 }
 
+/* job view */
+.job-view-container {
+    margin-top: 100px;
+}
+
+.job-view-container h1 {
+    margin-bottom: 30px;
+}
+
+#img-container {
+    margin-top:  20px;
+    margin-bottom: 30px;
+}
+
+#img-container img{
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid #212529;
+}
+
+.job-desc {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.main-color {
+    color: #f03e3e;
+}
+
+#back-link {
+    border: 1px solid #f03e3e;
+    padding: 5px 10px;
+    transition: .5s;
+    width: 80px;
+    margin-left: 20px;
+}
+
+#back-link:hover{
+    background-color: #f03e3e;
+    color: #FFF;
+    text-decoration: none;
+}
+
+/* design responsivo */
+
+@media (max-width: 481px) {
+
+    /* navbar */
+    #navbarNav {
+        text-align: center;
+    }
+
+    /* home */
+    #top-container {
+        padding: 50px;
+        padding-top: 100px;
+    }
+
+    #main-title {
+        font-size: 2.2rem;
+    }
+
+    #main-subtitle {
+        font-size: 1.5rem;
+    }
+
+    #seach-form {
+        padding: 0;
+    }
+
+}
