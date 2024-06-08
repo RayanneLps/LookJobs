@@ -233,8 +233,8 @@
 .navbar .nav-item a{
     color: #212529;
 
-}
-*/
+ 
+}*/
 
 .navbar-nav {
     display: flex;
@@ -449,6 +449,5 @@
     #form-box button {
         width: 100%;
     }
-
  
 }
